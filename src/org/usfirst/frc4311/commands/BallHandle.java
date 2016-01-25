@@ -11,15 +11,17 @@
 
 package org.usfirst.frc4311.commands;
 
+import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc4311.Robot;
 
 /**
  *
  */
-public class  BallTake extends Command {
+public class  BallHandle extends Command {
 
-    public BallTake() {
+    public BallHandle() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -33,6 +35,7 @@ public class  BallTake extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.ballWheels.right.set(Value.kForward);
     }
 
     // Make this return true when this Command no longer needs to run execute()
