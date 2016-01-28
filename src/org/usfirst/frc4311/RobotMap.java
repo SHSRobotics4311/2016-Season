@@ -14,7 +14,6 @@ package org.usfirst.frc4311;
 import edu.wpi.first.wpilibj.*;
 
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import java.util.Vector;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -53,15 +52,15 @@ public class RobotMap {
         robotDriveLeftRear = new Talon(3);
         LiveWindow.addActuator("RobotDrive", "LeftRear", (Talon) robotDriveLeftRear);
         
-        robotDriveDrive = new RobotDrive(robotDriveLeftFront, robotDriveLeftRear,
-              robotDriveRightFront, robotDriveRightRear);
+        robotDriveDrive = new RobotDrive(robotDriveLeftRear, robotDriveLeftFront,
+              robotDriveRightRear, robotDriveRightFront);
         
         robotDriveDrive.setSafetyEnabled(true);
         robotDriveDrive.setExpiration(0.1);
         robotDriveDrive.setSensitivity(0.5);
         robotDriveDrive.setMaxOutput(1.0);
 
-        armHeight = new Victor(4);
+        armHeight = new Victor (4);
         LiveWindow.addActuator("Arm", "Height", (Victor) armHeight);
         
         armExtend = new Victor(5);

@@ -31,13 +31,19 @@ public class  BallHandle extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
     }
-
+    boolean state = false;
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.ballWheels.right.set(Value.kForward);
+    	if (state){
+    		Robot.ballWheels.right.set(Value.kReverse);
+    		Robot.ballWheels.left.set(Value.kReverse);
+    	} else {
+    		Robot.ballWheels.right.set(Value.kForward);
+    		Robot.ballWheels.left.set(Value.kForward);
+    	}
     }
-
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
@@ -45,6 +51,9 @@ public class  BallHandle extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.ballWheels.right.set(Value.kOff);
+    	Robot.ballWheels.left.set(Value.kOff);
+    	state = !state;
     }
 
     // Called when another command which requires one or more of the same
