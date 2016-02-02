@@ -8,7 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package org.usfirst.frc4311.commands;
 
 import edu.wpi.first.wpilibj.Relay.Value;
@@ -16,9 +15,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc4311.Robot;
 
-/**
- *
- */
 public class  BallHandle extends Command {
 
     public BallHandle() {
@@ -37,11 +33,11 @@ public class  BallHandle extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (state){
-    		Robot.ballWheels.right.set(Value.kReverse);
-    		Robot.ballWheels.left.set(Value.kReverse);
+    		//Robot.ballWheels.right.set(Value.kReverse);
+    		//Robot.ballWheels.left.set(Value.kReverse);
     	} else {
-    		Robot.ballWheels.right.set(Value.kForward);
-    		Robot.ballWheels.left.set(Value.kForward);
+    		//Robot.ballWheels.right.set(Value.kForward);
+    		//Robot.ballWheels.left.set(Value.kForward);
     	}
     }
     // Make this return true when this Command no longer needs to run execute()
@@ -51,8 +47,8 @@ public class  BallHandle extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.ballWheels.right.set(Value.kOff);
-    	Robot.ballWheels.left.set(Value.kOff);
+    	//Robot.ballWheels.right.set(Value.kOff);
+    	//Robot.ballWheels.left.set(Value.kOff);
     	state = !state;
     }
 

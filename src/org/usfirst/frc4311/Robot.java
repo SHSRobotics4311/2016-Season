@@ -100,7 +100,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        RobotMap.robotDriveDrive.arcadeDrive(oi.joystick1.getY(),-(oi.joystick1.getX()));
+        RobotMap.robotDriveDrive.arcadeDrive(-(oi.joystick1.getY()),-(oi.joystick1.getX()));
     }
 
     /**
