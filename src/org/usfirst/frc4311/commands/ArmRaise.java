@@ -30,7 +30,6 @@ public class  ArmRaise extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.armMoving = true;
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -48,7 +47,6 @@ public class  ArmRaise extends Command {
     protected void end() {
     	RobotMap.armLeft.set(0);
     	RobotMap.armRight.set(0);
-    	Robot.armMoving = false;
     }
 
     // Called when another command which requires one or more of the same
@@ -56,6 +54,5 @@ public class  ArmRaise extends Command {
     protected void interrupted() {
     	RobotMap.armLeft.set(0);
     	RobotMap.armRight.set(0);
-    	Robot.armMoving = false;
     }
 }
