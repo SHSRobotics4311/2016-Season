@@ -12,7 +12,9 @@
 package org.usfirst.frc4311.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc4311.Robot;
+import org.usfirst.frc4311.RobotMap;
 
 /**
  *
@@ -29,23 +31,32 @@ public class  ArmLower extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.armMoving = true;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	RobotMap.armRight.set(-1);
+    	RobotMap.armLeft.set(1);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	RobotMap.armLeft.set(0);
+    	RobotMap.armRight.set(0);
+    	Robot.armMoving = false;
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	RobotMap.armLeft.set(0);
+    	RobotMap.armRight.set(0);
+    	Robot.armMoving = false;
     }
 }

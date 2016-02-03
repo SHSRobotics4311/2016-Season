@@ -79,11 +79,11 @@ public class OI {
         button5 = new JoystickButton(joystick1, 5);
         button5.whileHeld(new Nothing());
         button4 = new JoystickButton(joystick1, 4);
-        button4.whileHeld(new Nothing());
+        button4.whileHeld(new ArmRaise());
         button3 = new JoystickButton(joystick1, 3);
         button3.whileHeld(new Nothing());
         button2 = new JoystickButton(joystick1, 2);
-        button2.whileHeld(new Nothing());
+        button2.whileHeld(new ArmLower());
         trigger = new JoystickButton(joystick1, 1);
         trigger.whileHeld(new Nothing());
 
