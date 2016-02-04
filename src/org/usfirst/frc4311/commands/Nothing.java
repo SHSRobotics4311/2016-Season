@@ -12,11 +12,7 @@
 package org.usfirst.frc4311.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc4311.Robot;
 
-/**
- *
- */
 public class  Nothing extends Command {
 
     public Nothing() {

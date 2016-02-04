@@ -14,11 +14,7 @@ package org.usfirst.frc4311.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc4311.Robot;
-import org.usfirst.frc4311.RobotMap;
 
-/**
- *
- */
 public class  ArmLower extends Command {
 
     public ArmLower() {
