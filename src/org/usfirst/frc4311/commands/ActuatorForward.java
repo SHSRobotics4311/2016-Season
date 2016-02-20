@@ -8,14 +8,16 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
+
 package org.usfirst.frc4311.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4311.Robot;
 
-public class  BallHandle extends Command {
+import edu.wpi.first.wpilibj.command.Command;
 
-    public BallHandle() {
+public class  ActuatorForward extends Command {
+
+    public ActuatorForward() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -27,17 +29,12 @@ public class  BallHandle extends Command {
     protected void initialize() {
     	
     }
-    boolean state = false;
+
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (state){
-    		//Robot.ballWheels.right.set(Value.kReverse);
-    		//Robot.ballWheels.left.set(Value.kReverse);
-    	} else {
-    		//Robot.ballWheels.right.set(Value.kForward);
-    		//Robot.ballWheels.left.set(Value.kForward);
-    	}
+    	Robot.ballActuator.extend();
     }
+
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
@@ -45,13 +42,12 @@ public class  BallHandle extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	//Robot.ballWheels.right.set(Value.kOff);
-    	//Robot.ballWheels.left.set(Value.kOff);
-    	state = !state;
+    	Robot.ballActuator.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.ballActuator.stop();
     }
 }
