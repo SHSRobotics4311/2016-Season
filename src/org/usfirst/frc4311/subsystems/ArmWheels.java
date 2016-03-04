@@ -25,12 +25,12 @@ public class ArmWheels extends Subsystem {
 
     public void forward(){
     	left.set(Value.kForward);
-    	right.set(Value.kForward);
+    	right.set(Value.kReverse);
     }
     
     public void reverse(){
     	left.set(Value.kReverse);
-    	right.set(Value.kReverse);
+    	right.set(Value.kForward);
     }
     
     public void stop(){
